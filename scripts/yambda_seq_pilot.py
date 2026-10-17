@@ -14,7 +14,9 @@ Usage: python scripts/yambda_seq_pilot.py --model sasrec|gru4rec|counts [--epoch
 import argparse
 import json
 import math
+import os
 import time
+from pathlib import Path
 
 import numpy as np
 import pyarrow.parquet as pq
@@ -23,13 +25,20 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from tiger import ROOT, device
+ROOT = Path(__file__).resolve().parents[1]
+DATA = Path(os.environ.get("YAMBDA_DIR", ROOT / "data/raw/yambda"))
+
+
+def device():
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    return torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
 DAY = 86400
 
 
 def load():
-    t = pq.read_table(ROOT / "data/raw/yambda/listens_50m.parquet",
+    t = pq.read_table(DATA / "listens_50m.parquet",
                       columns=["uid", "timestamp", "item_id", "is_organic", "played_ratio_pct"]).to_pandas()
     t = t[t.played_ratio_pct >= 50].sort_values(["uid", "timestamp"], kind="stable").reset_index(drop=True)
     items, inv = np.unique(t.item_id.to_numpy(), return_inverse=True)
@@ -168,7 +177,8 @@ def rank_positions(model, t, ev, L, dev, bs=256):
     return pos
 
 
-def run_neural(t, n, ev, kind, epochs, L=200, bs=128, K=2048, lr=1e-3, seed=0, test_days=1, return_model=False):
+def run_neural(t, n, ev, kind, epochs, L=200, bs=128, K=2048, lr=1e-3, seed=0, test_days=1, return_model=False,
+               d=64, layers=2, n_val=3000, patience=2, amp=False, max_minutes=0):
     torch.manual_seed(seed); np.random.seed(seed)
     dev = device()
     T_max = t.timestamp.max()
@@ -182,9 +192,12 @@ def run_neural(t, n, ev, kind, epochs, L=200, bs=128, K=2048, lr=1e-3, seed=0, t
     # negatives: a large pool drawn once on CPU (torch.multinomial over 600k+ classes exceeds MPS buffer limits)
     pool = torch.as_tensor(np.random.default_rng(seed).choice(n, size=20_000_000, p=q), device=dev)
     pool_i = 0
-    val_ev = sample_events(val_mask, t.uid.to_numpy(), 3000, seed + 1)
-    model = SeqModel(n, kind, L=L).to(dev)
+    val_ev = sample_events(val_mask, t.uid.to_numpy(), n_val, seed + 1)
+    model = SeqModel(n, kind, d=d, L=L, layers=layers).to(dev)
     opt = torch.optim.Adam(model.parameters(), lr=lr)
+    amp = amp and dev.type == "cuda"
+    scaler = torch.amp.GradScaler("cuda", enabled=amp)
+    t_start = time.time()
     print(f"{kind}: {len(ws):,} training windows, {sum(p.numel() for p in model.parameters()) / 1e6:.1f}M params, device {dev}")
     best, best_state, bad = -1, None, 0
     for ep in range(1, epochs + 1):
@@ -192,7 +205,9 @@ def run_neural(t, n, ev, kind, epochs, L=200, bs=128, K=2048, lr=1e-3, seed=0, t
         for s in range(0, len(ws), bs):
             x = pad_left([ws[j] for j in perm[s:s + bs]], L, dev)
             inp, tgt = x[:, :-1], x[:, 1:]
-            h = model(inp)
+            with torch.autocast("cuda", dtype=torch.float16, enabled=amp):
+                h = model(inp)
+            h = h.float()
             m = tgt > 0
             h, tgt = h[m], tgt[m] - 1                                    # (P, d), item ids
             if pool_i + K > len(pool):
@@ -203,7 +218,7 @@ def run_neural(t, n, ev, kind, epochs, L=200, bs=128, K=2048, lr=1e-3, seed=0, t
             neg_logit = h @ E[neg + 1].T - logq[neg][None]
             neg_logit = neg_logit.masked_fill(neg[None] == tgt[:, None], float("-inf"))
             loss = F.cross_entropy(torch.cat([pos_logit, neg_logit], 1), torch.zeros(len(tgt), dtype=torch.long, device=dev))
-            opt.zero_grad(); loss.backward(); opt.step(); tot += loss.item()
+            opt.zero_grad(); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); tot += loss.item()
         vpos = rank_positions(model, t, val_ev, L, dev)
         vhr = float((vpos < 10).mean())
         print(f"epoch {ep}: loss {tot / math.ceil(len(ws) / bs):.3f}, val HR@10 {vhr:.4f}, {time.time() - t0:.0f}s", flush=True)
@@ -211,8 +226,11 @@ def run_neural(t, n, ev, kind, epochs, L=200, bs=128, K=2048, lr=1e-3, seed=0, t
             best, best_state, bad = vhr, {k: v.detach().clone() for k, v in model.state_dict().items()}, 0
         else:
             bad += 1
-            if bad >= 2:
+            if bad >= patience:
                 break
+        if max_minutes and time.time() - t_start > max_minutes * 60:
+            print(f"time budget of {max_minutes} min reached", flush=True)
+            break
     model.load_state_dict(best_state)
     if return_model:
         return model, best
