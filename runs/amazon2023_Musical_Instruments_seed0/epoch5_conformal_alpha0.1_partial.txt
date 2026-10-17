@@ -1,0 +1,45 @@
+scored 57,439 users in 34s; median -log p(item) 9.24
+{
+ "alpha": 0.1,
+ "q": [
+  6.401622295379639,
+  10.990569114685059,
+  12.680194854736328,
+  12.941402435302734
+ ],
+ "search_sec": 16324,
+ "cost_median": 49308.0,
+ "cost_p99": 52665.19,
+ "capped_share": 0.0,
+ "depth1": {
+  "coverage": 0.908,
+  "coverage_by_score": 0.908,
+  "nodes_mean": 128.973,
+  "nodes_median": 128.0,
+  "items_mean": 13991.804,
+  "items_median": 13973.5
+ },
+ "depth2": {
+  "coverage": 0.917,
+  "coverage_by_score": 0.917,
+  "nodes_mean": 5545.83,
+  "nodes_median": 5530.0,
+  "items_mean": 14783.204,
+  "items_median": 14881.0
+ },
+ "depth3": {
+  "coverage": 0.895,
+  "coverage_by_score": 0.895,
+  "nodes_mean": 13454.988,
+  "nodes_median": 13535.5,
+  "items_mean": 15526.404,
+  "items_median": 15635.5
+ },
+ "depth4": {
+  "coverage": 0.895,
+  "coverage_by_score": 0.895,
+  "nodes_mean": 15711.435,
+  "nodes_median": 15847.0,
+  "items_mean": 15711.435,
+
+[killed]
