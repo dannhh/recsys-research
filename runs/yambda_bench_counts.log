@@ -1,0 +1,29 @@
+[counts] listen+ 29,439,278; items 631,003; test events 30,000 over 3 days (organic 0.460); load 8s
+
+[counts] popularity pooled
+  all                  n= 30000  HR@10 0.0050  NDCG@10 0.0024  HR@100 0.0294
+  organic              n= 13791  HR@10 0.0076  NDCG@10 0.0037  HR@100 0.0371
+  recommended          n= 16209  HR@10 0.0028  NDCG@10 0.0013  HR@100 0.0229
+  organic, repeat      n= 11600  HR@10 0.0085  NDCG@10 0.0041  HR@100 0.0415
+  organic, new         n=  2191  HR@10 0.0027  NDCG@10 0.0013  HR@100 0.0141
+  recommended, repeat  n=  9801  HR@10 0.0041  NDCG@10 0.0018  HR@100 0.0317
+  recommended, new     n=  6408  HR@10 0.0008  NDCG@10 0.0004  HR@100 0.0094
+
+[counts] markov1 pooled
+  all                  n= 30000  HR@10 0.1321  NDCG@10 0.0876  HR@100 0.2156
+  organic              n= 13791  HR@10 0.2715  NDCG@10 0.1820  HR@100 0.4032
+  recommended          n= 16209  HR@10 0.0135  NDCG@10 0.0072  HR@100 0.0560
+  organic, repeat      n= 11600  HR@10 0.2939  NDCG@10 0.1964  HR@100 0.4321
+  organic, new         n=  2191  HR@10 0.1529  NDCG@10 0.1060  HR@100 0.2506
+  recommended, repeat  n=  9801  HR@10 0.0181  NDCG@10 0.0098  HR@100 0.0686
+  recommended, new     n=  6408  HR@10 0.0066  NDCG@10 0.0032  HR@100 0.0368
+
+[counts] pairwise5 pooled
+  all                  n= 30000  HR@10 0.1278  NDCG@10 0.0720  HR@100 0.2595
+  organic              n= 13791  HR@10 0.2590  NDCG@10 0.1471  HR@100 0.4610
+  recommended          n= 16209  HR@10 0.0162  NDCG@10 0.0081  HR@100 0.0880
+  organic, repeat      n= 11600  HR@10 0.2784  NDCG@10 0.1579  HR@100 0.4875
+  organic, new         n=  2191  HR@10 0.1565  NDCG@10 0.0899  HR@100 0.3204
+  recommended, repeat  n=  9801  HR@10 0.0215  NDCG@10 0.0111  HR@100 0.1070
+  recommended, new     n=  6408  HR@10 0.0080  NDCG@10 0.0036  HR@100 0.0590
+[counts] done in 0.7 min

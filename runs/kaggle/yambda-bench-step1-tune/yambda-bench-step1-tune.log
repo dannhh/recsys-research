@@ -1,0 +1,217 @@
+[{"stream_name":"stdout","time":16.751618652,"data":"Sat Oct 17 17:55:00 2026       \n"}
+,{"stream_name":"stdout","time":16.751667353,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":16.751671656,"data":"| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":16.751689187,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":16.751693255,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":16.751697075,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":16.751701044,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":16.751704963,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":16.817950636,"data":"|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":16.817970009,"data":"| N/A   45C    P8              9W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":16.817974562,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":16.817978222,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":16.817984764,"data":"|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":16.817987143,"data":"| N/A   47C    P8              9W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":16.817989406,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":16.817991667,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":16.818474833,"data":"\n"}
+,{"stream_name":"stdout","time":16.818484595,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":16.818487319,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":16.818489647,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":16.818491925,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":16.818494255,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":16.819908281,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":16.819918808,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":17.173917662,"data":"[gpu0] start --model sasrec --d 64 --lr 1e-3 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":17.175252543,"data":"[gpu1] start --model sasrec --d 64 --lr 3e-4 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":490.407329729,"data":"[gpu1] exit 0 --model sasrec --d 64 --lr 3e-4 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":490.407545945,"data":"[sasrec_d64_l2_lr0.0003_s0] listen+ 29,439,278; items 631,003; test events 30,000 over 3 days (organic 0.460); load 19s\n"}
+,{"stream_name":"stdout","time":490.407556357,"data":"/kaggle/working/code/yambda_seq_pilot.py:120: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True\n"}
+,{"stream_name":"stdout","time":490.407561326,"data":"  self.enc = nn.TransformerEncoder(layer, layers)\n"}
+,{"stream_name":"stdout","time":490.407564941,"data":"sasrec: 149,018 training windows, 40.5M params, device cuda\n"}
+,{"stream_name":"stdout","time":490.407568644,"data":"epoch 1: loss 8.066, val HR@10 0.0057, 71s\n"}
+,{"stream_name":"stdout","time":490.407572906,"data":"epoch 2: loss 7.624, val HR@10 0.0056, 70s\n"}
+,{"stream_name":"stdout","time":490.40757664,"data":"epoch 3: loss 7.445, val HR@10 0.0061, 70s\n"}
+,{"stream_name":"stdout","time":490.407580256,"data":"epoch 4: loss 7.294, val HR@10 0.0056, 70s\n"}
+,{"stream_name":"stdout","time":490.407583902,"data":"epoch 5: loss 7.148, val HR@10 0.0056, 70s\n"}
+,{"stream_name":"stdout","time":490.407587586,"data":"epoch 6: loss 7.037, val HR@10 0.0061, 70s\n"}
+,{"stream_name":"stdout","time":490.40759066,"data":"\n"}
+,{"stream_name":"stdout","time":490.407594228,"data":"[sasrec_d64_l2_lr0.0003_s0] sasrec_d64_l2_lr0.0003_s0 pooled\n"}
+,{"stream_name":"stdout","time":490.407597552,"data":"  all                  n= 30000  HR@10 0.0052  NDCG@10 0.0025  HR@100 0.0306\n"}
+,{"stream_name":"stdout","time":490.407601105,"data":"  organic              n= 13791  HR@10 0.0078  NDCG@10 0.0038  HR@100 0.0366\n"}
+,{"stream_name":"stdout","time":490.40760423,"data":"  recommended          n= 16209  HR@10 0.0030  NDCG@10 0.0013  HR@100 0.0255\n"}
+,{"stream_name":"stdout","time":490.407607812,"data":"  organic, repeat      n= 11600  HR@10 0.0087  NDCG@10 0.0042  HR@100 0.0411\n"}
+,{"stream_name":"stdout","time":490.407611297,"data":"  organic, new         n=  2191  HR@10 0.0027  NDCG@10 0.0015  HR@100 0.0128\n"}
+,{"stream_name":"stdout","time":490.407614627,"data":"  recommended, repeat  n=  9801  HR@10 0.0047  NDCG@10 0.0021  HR@100 0.0355\n"}
+,{"stream_name":"stdout","time":490.407618177,"data":"  recommended, new     n=  6408  HR@10 0.0005  NDCG@10 0.0002  HR@100 0.0103\n"}
+,{"stream_name":"stdout","time":490.407622124,"data":"[sasrec_d64_l2_lr0.0003_s0] done in 7.7 min\n"}
+,{"stream_name":"stdout","time":490.407625884,"data":"\n"}
+,{"stream_name":"stdout","time":490.407629734,"data":"[gpu1] start --model sasrec --d 128 --lr 1e-3 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":2010.383688859,"data":"[gpu0] exit 0 --model sasrec --d 64 --lr 1e-3 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":2010.384121633,"data":"al HR@10 0.0652, 70s\n"}
+,{"stream_name":"stdout","time":2010.384146023,"data":"epoch 10: loss 4.719, val HR@10 0.0685, 70s\n"}
+,{"stream_name":"stdout","time":2010.384151297,"data":"epoch 11: loss 4.620, val HR@10 0.0716, 70s\n"}
+,{"stream_name":"stdout","time":2010.384155774,"data":"epoch 12: loss 4.540, val HR@10 0.0754, 69s\n"}
+,{"stream_name":"stdout","time":2010.384160118,"data":"epoch 13: loss 4.472, val HR@10 0.0799, 69s\n"}
+,{"stream_name":"stdout","time":2010.384164398,"data":"epoch 14: loss 4.418, val HR@10 0.0794, 69s\n"}
+,{"stream_name":"stdout","time":2010.384168516,"data":"epoch 15: loss 4.373, val HR@10 0.0825, 70s\n"}
+,{"stream_name":"stdout","time":2010.384172862,"data":"epoch 16: loss 4.334, val HR@10 0.0888, 69s\n"}
+,{"stream_name":"stdout","time":2010.384177036,"data":"epoch 17: loss 4.299, val HR@10 0.0874, 69s\n"}
+,{"stream_name":"stdout","time":2010.384193216,"data":"epoch 18: loss 4.268, val HR@10 0.0866, 69s\n"}
+,{"stream_name":"stdout","time":2010.384197064,"data":"epoch 19: loss 4.245, val HR@10 0.0916, 69s\n"}
+,{"stream_name":"stdout","time":2010.384200367,"data":"epoch 20: loss 4.224, val HR@10 0.0890, 69s\n"}
+,{"stream_name":"stdout","time":2010.384203767,"data":"epoch 21: loss 4.203, val HR@10 0.0937, 69s\n"}
+,{"stream_name":"stdout","time":2010.384207182,"data":"epoch 22: loss 4.186, val HR@10 0.0924, 69s\n"}
+,{"stream_name":"stdout","time":2010.384210545,"data":"epoch 23: loss 4.170, val HR@10 0.0944, 69s\n"}
+,{"stream_name":"stdout","time":2010.384213864,"data":"epoch 24: loss 4.154, val HR@10 0.0938, 69s\n"}
+,{"stream_name":"stdout","time":2010.384217274,"data":"epoch 25: loss 4.140, val HR@10 0.0983, 69s\n"}
+,{"stream_name":"stdout","time":2010.384220633,"data":"epoch 26: loss 4.124, val HR@10 0.0975, 69s\n"}
+,{"stream_name":"stdout","time":2010.384224068,"data":"epoch 27: loss 4.115, val HR@10 0.0956, 69s\n"}
+,{"stream_name":"stdout","time":2010.384228261,"data":"epoch 28: loss 4.103, val HR@10 0.0951, 69s\n"}
+,{"stream_name":"stdout","time":2010.384231714,"data":"\n"}
+,{"stream_name":"stdout","time":2010.384234917,"data":"[sasrec_d64_l2_lr0.001_s0] sasrec_d64_l2_lr0.001_s0 pooled\n"}
+,{"stream_name":"stdout","time":2010.384238342,"data":"  all                  n= 30000  HR@10 0.1085  NDCG@10 0.0576  HR@100 0.3055\n"}
+,{"stream_name":"stdout","time":2010.384241886,"data":"  organic              n= 13791  HR@10 0.2090  NDCG@10 0.1127  HR@100 0.4612\n"}
+,{"stream_name":"stdout","time":2010.384245378,"data":"  recommended          n= 16209  HR@10 0.0230  NDCG@10 0.0107  HR@100 0.1729\n"}
+,{"stream_name":"stdout","time":2010.384249379,"data":"  organic, repeat      n= 11600  HR@10 0.2336  NDCG@10 0.1275  HR@100 0.4934\n"}
+,{"stream_name":"stdout","time":2010.384252834,"data":"  organic, new         n=  2191  HR@10 0.0785  NDCG@10 0.0344  HR@100 0.2907\n"}
+,{"stream_name":"stdout","time":2010.38425629,"data":"  recommended, repeat  n=  9801  HR@10 0.0290  NDCG@10 0.0136  HR@100 0.2069\n"}
+,{"stream_name":"stdout","time":2010.384259886,"data":"  recommended, new     n=  6408  HR@10 0.0137  NDCG@10 0.0063  HR@100 0.1209\n"}
+,{"stream_name":"stdout","time":2010.384263962,"data":"[sasrec_d64_l2_lr0.001_s0] done in 33.2 min\n"}
+,{"stream_name":"stdout","time":2010.384267374,"data":"\n"}
+,{"stream_name":"stdout","time":2010.384909193,"data":"[gpu0] start --model sasrec --d 128 --lr 3e-4 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":4365.330233308,"data":"[gpu1] exit 0 --model sasrec --d 128 --lr 1e-3 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":4365.330423351,"data":"poch 18: loss 3.957, val HR@10 0.0990, 107s\n"}
+,{"stream_name":"stdout","time":4365.330434208,"data":"epoch 19: loss 3.933, val HR@10 0.0998, 107s\n"}
+,{"stream_name":"stdout","time":4365.330438893,"data":"epoch 20: loss 3.907, val HR@10 0.1013, 107s\n"}
+,{"stream_name":"stdout","time":4365.330443354,"data":"epoch 21: loss 3.881, val HR@10 0.1027, 107s\n"}
+,{"stream_name":"stdout","time":4365.330447707,"data":"epoch 22: loss 3.859, val HR@10 0.1063, 106s\n"}
+,{"stream_name":"stdout","time":4365.330452172,"data":"epoch 23: loss 3.838, val HR@10 0.1026, 107s\n"}
+,{"stream_name":"stdout","time":4365.330456494,"data":"epoch 24: loss 3.817, val HR@10 0.1061, 107s\n"}
+,{"stream_name":"stdout","time":4365.330460922,"data":"epoch 25: loss 3.799, val HR@10 0.1072, 107s\n"}
+,{"stream_name":"stdout","time":4365.330465298,"data":"epoch 26: loss 3.772, val HR@10 0.1084, 107s\n"}
+,{"stream_name":"stdout","time":4365.330469888,"data":"epoch 27: loss 3.764, val HR@10 0.1087, 107s\n"}
+,{"stream_name":"stdout","time":4365.330486799,"data":"epoch 28: loss 3.751, val HR@10 0.1064, 107s\n"}
+,{"stream_name":"stdout","time":4365.330490578,"data":"epoch 29: loss 3.736, val HR@10 0.1085, 107s\n"}
+,{"stream_name":"stdout","time":4365.330494127,"data":"epoch 30: loss 3.724, val HR@10 0.1101, 106s\n"}
+,{"stream_name":"stdout","time":4365.330497627,"data":"epoch 31: loss 3.714, val HR@10 0.1094, 107s\n"}
+,{"stream_name":"stdout","time":4365.330501102,"data":"epoch 32: loss 3.702, val HR@10 0.1122, 107s\n"}
+,{"stream_name":"stdout","time":4365.330504587,"data":"epoch 33: loss 3.691, val HR@10 0.1131, 107s\n"}
+,{"stream_name":"stdout","time":4365.330508063,"data":"epoch 34: loss 3.675, val HR@10 0.1079, 107s\n"}
+,{"stream_name":"stdout","time":4365.330511587,"data":"epoch 35: loss 3.670, val HR@10 0.1107, 107s\n"}
+,{"stream_name":"stdout","time":4365.330515085,"data":"epoch 36: loss 3.662, val HR@10 0.1106, 107s\n"}
+,{"stream_name":"stdout","time":4365.330518592,"data":"\n"}
+,{"stream_name":"stdout","time":4365.330521926,"data":"[sasrec_d128_l2_lr0.001_s0] sasrec_d128_l2_lr0.001_s0 pooled\n"}
+,{"stream_name":"stdout","time":4365.330525587,"data":"  all                  n= 30000  HR@10 0.1311  NDCG@10 0.0771  HR@100 0.3255\n"}
+,{"stream_name":"stdout","time":4365.330529227,"data":"  organic              n= 13791  HR@10 0.2383  NDCG@10 0.1353  HR@100 0.4995\n"}
+,{"stream_name":"stdout","time":4365.330532819,"data":"  recommended          n= 16209  HR@10 0.0400  NDCG@10 0.0277  HR@100 0.1776\n"}
+,{"stream_name":"stdout","time":4365.330536458,"data":"  organic, repeat      n= 11600  HR@10 0.2654  NDCG@10 0.1531  HR@100 0.5368\n"}
+,{"stream_name":"stdout","time":4365.330540069,"data":"  organic, new         n=  2191  HR@10 0.0945  NDCG@10 0.0408  HR@100 0.3017\n"}
+,{"stream_name":"stdout","time":4365.330543676,"data":"  recommended, repeat  n=  9801  HR@10 0.0560  NDCG@10 0.0412  HR@100 0.2155\n"}
+,{"stream_name":"stdout","time":4365.330547271,"data":"  recommended, new     n=  6408  HR@10 0.0154  NDCG@10 0.0069  HR@100 0.1195\n"}
+,{"stream_name":"stdout","time":4365.330550834,"data":"[sasrec_d128_l2_lr0.001_s0] done in 64.5 min\n"}
+,{"stream_name":"stdout","time":4365.330554355,"data":"\n"}
+,{"stream_name":"stdout","time":4365.330557703,"data":"[gpu1] start --model sasrec --d 256 --lr 1e-3 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":6282.918523256,"data":"[gpu0] exit 0 --model sasrec --d 128 --lr 3e-4 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":6282.918957626,"data":"h 22: loss 4.527, val HR@10 0.0627, 106s\n"}
+,{"stream_name":"stdout","time":6282.918969977,"data":"epoch 23: loss 4.467, val HR@10 0.0617, 106s\n"}
+,{"stream_name":"stdout","time":6282.9189746,"data":"epoch 24: loss 4.411, val HR@10 0.0672, 106s\n"}
+,{"stream_name":"stdout","time":6282.918978906,"data":"epoch 25: loss 4.362, val HR@10 0.0702, 106s\n"}
+,{"stream_name":"stdout","time":6282.918983224,"data":"epoch 26: loss 4.313, val HR@10 0.0709, 106s\n"}
+,{"stream_name":"stdout","time":6282.918987688,"data":"epoch 27: loss 4.273, val HR@10 0.0728, 106s\n"}
+,{"stream_name":"stdout","time":6282.918991858,"data":"epoch 28: loss 4.239, val HR@10 0.0751, 106s\n"}
+,{"stream_name":"stdout","time":6282.918995934,"data":"epoch 29: loss 4.206, val HR@10 0.0769, 106s\n"}
+,{"stream_name":"stdout","time":6282.919000069,"data":"epoch 30: loss 4.175, val HR@10 0.0788, 106s\n"}
+,{"stream_name":"stdout","time":6282.919004219,"data":"epoch 31: loss 4.148, val HR@10 0.0807, 106s\n"}
+,{"stream_name":"stdout","time":6282.919008432,"data":"epoch 32: loss 4.121, val HR@10 0.0831, 106s\n"}
+,{"stream_name":"stdout","time":6282.919012592,"data":"epoch 33: loss 4.096, val HR@10 0.0848, 106s\n"}
+,{"stream_name":"stdout","time":6282.919030034,"data":"epoch 34: loss 4.071, val HR@10 0.0840, 106s\n"}
+,{"stream_name":"stdout","time":6282.919033701,"data":"epoch 35: loss 4.046, val HR@10 0.0863, 106s\n"}
+,{"stream_name":"stdout","time":6282.919037021,"data":"epoch 36: loss 4.029, val HR@10 0.0875, 106s\n"}
+,{"stream_name":"stdout","time":6282.919040314,"data":"epoch 37: loss 4.010, val HR@10 0.0871, 106s\n"}
+,{"stream_name":"stdout","time":6282.919043684,"data":"epoch 38: loss 3.991, val HR@10 0.0877, 106s\n"}
+,{"stream_name":"stdout","time":6282.919047037,"data":"epoch 39: loss 3.975, val HR@10 0.0922, 106s\n"}
+,{"stream_name":"stdout","time":6282.919050347,"data":"epoch 40: loss 3.958, val HR@10 0.0893, 106s\n"}
+,{"stream_name":"stdout","time":6282.919053657,"data":"\n"}
+,{"stream_name":"stdout","time":6282.919056929,"data":"[sasrec_d128_l2_lr0.0003_s0] sasrec_d128_l2_lr0.0003_s0 pooled\n"}
+,{"stream_name":"stdout","time":6282.919060406,"data":"  all                  n= 30000  HR@10 0.1044  NDCG@10 0.0517  HR@100 0.2850\n"}
+,{"stream_name":"stdout","time":6282.919063926,"data":"  organic              n= 13791  HR@10 0.2048  NDCG@10 0.1021  HR@100 0.4412\n"}
+,{"stream_name":"stdout","time":6282.919067367,"data":"  recommended          n= 16209  HR@10 0.0190  NDCG@10 0.0087  HR@100 0.1522\n"}
+,{"stream_name":"stdout","time":6282.919070893,"data":"  organic, repeat      n= 11600  HR@10 0.2289  NDCG@10 0.1150  HR@100 0.4747\n"}
+,{"stream_name":"stdout","time":6282.919074235,"data":"  organic, new         n=  2191  HR@10 0.0771  NDCG@10 0.0340  HR@100 0.2634\n"}
+,{"stream_name":"stdout","time":6282.9190777,"data":"  recommended, repeat  n=  9801  HR@10 0.0239  NDCG@10 0.0112  HR@100 0.1806\n"}
+,{"stream_name":"stdout","time":6282.919081135,"data":"  recommended, new     n=  6408  HR@10 0.0115  NDCG@10 0.0050  HR@100 0.1088\n"}
+,{"stream_name":"stdout","time":6282.919084625,"data":"[sasrec_d128_l2_lr0.0003_s0] done in 71.2 min\n"}
+,{"stream_name":"stdout","time":6282.919087956,"data":"\n"}
+,{"stream_name":"stdout","time":6282.919721368,"data":"[gpu0] start --model sasrec --d 256 --lr 3e-4 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":9724.236789962,"data":"[gpu1] exit 0 --model sasrec --d 256 --lr 1e-3 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":9724.237228856,"data":"poch 10: loss 4.499, val HR@10 0.0760, 190s\n"}
+,{"stream_name":"stdout","time":9724.23724607,"data":"epoch 11: loss 4.394, val HR@10 0.0811, 190s\n"}
+,{"stream_name":"stdout","time":9724.237251594,"data":"epoch 12: loss 4.308, val HR@10 0.0892, 190s\n"}
+,{"stream_name":"stdout","time":9724.23725721,"data":"epoch 13: loss 4.231, val HR@10 0.0901, 190s\n"}
+,{"stream_name":"stdout","time":9724.237262939,"data":"epoch 14: loss 4.166, val HR@10 0.0914, 190s\n"}
+,{"stream_name":"stdout","time":9724.237268133,"data":"epoch 15: loss 4.107, val HR@10 0.0930, 190s\n"}
+,{"stream_name":"stdout","time":9724.237273353,"data":"epoch 16: loss 4.053, val HR@10 0.1000, 190s\n"}
+,{"stream_name":"stdout","time":9724.237279137,"data":"epoch 17: loss 3.997, val HR@10 0.0940, 190s\n"}
+,{"stream_name":"stdout","time":9724.237284454,"data":"epoch 18: loss 3.940, val HR@10 0.1030, 190s\n"}
+,{"stream_name":"stdout","time":9724.237289943,"data":"epoch 19: loss 3.909, val HR@10 0.1047, 190s\n"}
+,{"stream_name":"stdout","time":9724.237294908,"data":"epoch 20: loss 3.878, val HR@10 0.1070, 190s\n"}
+,{"stream_name":"stdout","time":9724.237300012,"data":"epoch 21: loss 3.844, val HR@10 0.1090, 190s\n"}
+,{"stream_name":"stdout","time":9724.237304885,"data":"epoch 22: loss 3.813, val HR@10 0.1110, 190s\n"}
+,{"stream_name":"stdout","time":9724.237310023,"data":"epoch 23: loss 3.784, val HR@10 0.1086, 190s\n"}
+,{"stream_name":"stdout","time":9724.237330075,"data":"epoch 24: loss 3.755, val HR@10 0.1116, 190s\n"}
+,{"stream_name":"stdout","time":9724.237334584,"data":"epoch 25: loss 3.728, val HR@10 0.1144, 190s\n"}
+,{"stream_name":"stdout","time":9724.237338571,"data":"epoch 26: loss 3.678, val HR@10 0.1142, 190s\n"}
+,{"stream_name":"stdout","time":9724.237342794,"data":"epoch 27: loss 3.664, val HR@10 0.1126, 190s\n"}
+,{"stream_name":"stdout","time":9724.237346847,"data":"epoch 28: loss 3.648, val HR@10 0.1131, 190s\n"}
+,{"stream_name":"stdout","time":9724.237353381,"data":"\n"}
+,{"stream_name":"stdout","time":9724.237357648,"data":"[sasrec_d256_l2_lr0.001_s0] sasrec_d256_l2_lr0.001_s0 pooled\n"}
+,{"stream_name":"stdout","time":9724.237362291,"data":"  all                  n= 30000  HR@10 0.1274  NDCG@10 0.0667  HR@100 0.3289\n"}
+,{"stream_name":"stdout","time":9724.237366605,"data":"  organic              n= 13791  HR@10 0.2481  NDCG@10 0.1315  HR@100 0.5063\n"}
+,{"stream_name":"stdout","time":9724.237370679,"data":"  recommended          n= 16209  HR@10 0.0247  NDCG@10 0.0116  HR@100 0.1780\n"}
+,{"stream_name":"stdout","time":9724.237375297,"data":"  organic, repeat      n= 11600  HR@10 0.2725  NDCG@10 0.1461  HR@100 0.5389\n"}
+,{"stream_name":"stdout","time":9724.237379814,"data":"  organic, new         n=  2191  HR@10 0.1187  NDCG@10 0.0541  HR@100 0.3341\n"}
+,{"stream_name":"stdout","time":9724.237383688,"data":"  recommended, repeat  n=  9801  HR@10 0.0281  NDCG@10 0.0135  HR@100 0.2143\n"}
+,{"stream_name":"stdout","time":9724.237388257,"data":"  recommended, new     n=  6408  HR@10 0.0197  NDCG@10 0.0086  HR@100 0.1225\n"}
+,{"stream_name":"stdout","time":9724.237392852,"data":"[sasrec_d256_l2_lr0.001_s0] done in 89.3 min\n"}
+,{"stream_name":"stdout","time":9724.237396497,"data":"\n"}
+,{"stream_name":"stdout","time":12348.18527174,"data":"[gpu0] exit 0 --model sasrec --d 256 --lr 3e-4 --seed 0 --max_minutes 100\n"}
+,{"stream_name":"stdout","time":12348.18571995,"data":", 188s\n"}
+,{"stream_name":"stdout","time":12348.185736041,"data":"epoch 15: loss 4.707, val HR@10 0.0461, 188s\n"}
+,{"stream_name":"stdout","time":12348.185741044,"data":"epoch 16: loss 4.614, val HR@10 0.0518, 188s\n"}
+,{"stream_name":"stdout","time":12348.18574544,"data":"epoch 17: loss 4.529, val HR@10 0.0538, 188s\n"}
+,{"stream_name":"stdout","time":12348.185761284,"data":"epoch 18: loss 4.423, val HR@10 0.0550, 187s\n"}
+,{"stream_name":"stdout","time":12348.185766339,"data":"epoch 19: loss 4.382, val HR@10 0.0568, 188s\n"}
+,{"stream_name":"stdout","time":12348.185771153,"data":"epoch 20: loss 4.328, val HR@10 0.0618, 188s\n"}
+,{"stream_name":"stdout","time":12348.185775807,"data":"epoch 21: loss 4.275, val HR@10 0.0619, 189s\n"}
+,{"stream_name":"stdout","time":12348.185779931,"data":"epoch 22: loss 4.227, val HR@10 0.0642, 189s\n"}
+,{"stream_name":"stdout","time":12348.185784425,"data":"epoch 23: loss 4.182, val HR@10 0.0642, 189s\n"}
+,{"stream_name":"stdout","time":12348.185788549,"data":"epoch 24: loss 4.137, val HR@10 0.0675, 189s\n"}
+,{"stream_name":"stdout","time":12348.185792749,"data":"epoch 25: loss 4.095, val HR@10 0.0720, 189s\n"}
+,{"stream_name":"stdout","time":12348.185796866,"data":"epoch 26: loss 4.024, val HR@10 0.0711, 188s\n"}
+,{"stream_name":"stdout","time":12348.185804317,"data":"epoch 27: loss 4.004, val HR@10 0.0744, 188s\n"}
+,{"stream_name":"stdout","time":12348.185807433,"data":"epoch 28: loss 3.977, val HR@10 0.0749, 188s\n"}
+,{"stream_name":"stdout","time":12348.185871992,"data":"epoch 29: loss 3.948, val HR@10 0.0761, 188s\n"}
+,{"stream_name":"stdout","time":12348.185879741,"data":"epoch 30: loss 3.920, val HR@10 0.0784, 188s\n"}
+,{"stream_name":"stdout","time":12348.185899576,"data":"epoch 31: loss 3.893, val HR@10 0.0774, 188s\n"}
+,{"stream_name":"stdout","time":12348.185902385,"data":"epoch 32: loss 3.865, val HR@10 0.0814, 188s\n"}
+,{"stream_name":"stdout","time":12348.185904565,"data":"time budget of 100.0 min reached\n"}
+,{"stream_name":"stdout","time":12348.185906737,"data":"\n"}
+,{"stream_name":"stdout","time":12348.185908893,"data":"[sasrec_d256_l2_lr0.0003_s0] sasrec_d256_l2_lr0.0003_s0 pooled\n"}
+,{"stream_name":"stdout","time":12348.185911112,"data":"  all                  n= 30000  HR@10 0.0753  NDCG@10 0.0411  HR@100 0.2712\n"}
+,{"stream_name":"stdout","time":12348.185913375,"data":"  organic              n= 13791  HR@10 0.1407  NDCG@10 0.0788  HR@100 0.4223\n"}
+,{"stream_name":"stdout","time":12348.18591652,"data":"  recommended          n= 16209  HR@10 0.0196  NDCG@10 0.0090  HR@100 0.1426\n"}
+,{"stream_name":"stdout","time":12348.185928549,"data":"  organic, repeat      n= 11600  HR@10 0.1556  NDCG@10 0.0880  HR@100 0.4542\n"}
+,{"stream_name":"stdout","time":12348.185932522,"data":"  organic, new         n=  2191  HR@10 0.0621  NDCG@10 0.0300  HR@100 0.2533\n"}
+,{"stream_name":"stdout","time":12348.185936583,"data":"  recommended, repeat  n=  9801  HR@10 0.0242  NDCG@10 0.0114  HR@100 0.1674\n"}
+,{"stream_name":"stdout","time":12348.185940538,"data":"  recommended, new     n=  6408  HR@10 0.0125  NDCG@10 0.0053  HR@100 0.1047\n"}
+,{"stream_name":"stdout","time":12348.185944363,"data":"[sasrec_d256_l2_lr0.0003_s0] done in 101.0 min\n"}
+,{"stream_name":"stdout","time":12348.185947696,"data":"\n"}
+,{"stream_name":"stdout","time":12348.186024868,"data":"failed: []\n"}
+,{"stream_name":"stderr","time":12351.333038477,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":12351.333068222,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":12351.808831576,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":12351.808855839,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":12352.828089262,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":12354.284459643,"data":"[NbConvertApp] Writing 318696 bytes to __results__.html\n"}
+]

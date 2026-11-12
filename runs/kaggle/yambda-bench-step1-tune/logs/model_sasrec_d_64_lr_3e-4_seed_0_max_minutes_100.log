@@ -1,0 +1,20 @@
+[sasrec_d64_l2_lr0.0003_s0] listen+ 29,439,278; items 631,003; test events 30,000 over 3 days (organic 0.460); load 19s
+/kaggle/working/code/yambda_seq_pilot.py:120: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, layers)
+sasrec: 149,018 training windows, 40.5M params, device cuda
+epoch 1: loss 8.066, val HR@10 0.0057, 71s
+epoch 2: loss 7.624, val HR@10 0.0056, 70s
+epoch 3: loss 7.445, val HR@10 0.0061, 70s
+epoch 4: loss 7.294, val HR@10 0.0056, 70s
+epoch 5: loss 7.148, val HR@10 0.0056, 70s
+epoch 6: loss 7.037, val HR@10 0.0061, 70s
+
+[sasrec_d64_l2_lr0.0003_s0] sasrec_d64_l2_lr0.0003_s0 pooled
+  all                  n= 30000  HR@10 0.0052  NDCG@10 0.0025  HR@100 0.0306
+  organic              n= 13791  HR@10 0.0078  NDCG@10 0.0038  HR@100 0.0366
+  recommended          n= 16209  HR@10 0.0030  NDCG@10 0.0013  HR@100 0.0255
+  organic, repeat      n= 11600  HR@10 0.0087  NDCG@10 0.0042  HR@100 0.0411
+  organic, new         n=  2191  HR@10 0.0027  NDCG@10 0.0015  HR@100 0.0128
+  recommended, repeat  n=  9801  HR@10 0.0047  NDCG@10 0.0021  HR@100 0.0355
+  recommended, new     n=  6408  HR@10 0.0005  NDCG@10 0.0002  HR@100 0.0103
+[sasrec_d64_l2_lr0.0003_s0] done in 7.7 min

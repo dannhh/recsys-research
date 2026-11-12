@@ -1,0 +1,50 @@
+[sasrec_d128_l2_lr0.001_s0] listen+ 29,439,278; items 631,003; test events 30,000 over 3 days (organic 0.460); load 15s
+/kaggle/working/code/yambda_seq_pilot.py:120: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, layers)
+sasrec: 149,018 training windows, 81.2M params, device cuda
+epoch 1: loss 7.760, val HR@10 0.0030, 106s
+epoch 2: loss 7.167, val HR@10 0.0043, 106s
+epoch 3: loss 6.681, val HR@10 0.0142, 107s
+epoch 4: loss 6.098, val HR@10 0.0234, 107s
+epoch 5: loss 5.639, val HR@10 0.0356, 107s
+epoch 6: loss 5.295, val HR@10 0.0495, 107s
+epoch 7: loss 5.005, val HR@10 0.0598, 107s
+epoch 8: loss 4.767, val HR@10 0.0685, 107s
+epoch 9: loss 4.574, val HR@10 0.0712, 107s
+epoch 10: loss 4.451, val HR@10 0.0800, 107s
+epoch 11: loss 4.349, val HR@10 0.0817, 107s
+epoch 12: loss 4.268, val HR@10 0.0871, 107s
+epoch 13: loss 4.198, val HR@10 0.0916, 107s
+epoch 14: loss 4.138, val HR@10 0.0911, 106s
+epoch 15: loss 4.087, val HR@10 0.0935, 107s
+epoch 16: loss 4.041, val HR@10 0.0972, 107s
+epoch 17: loss 3.997, val HR@10 0.0947, 107s
+epoch 18: loss 3.957, val HR@10 0.0990, 107s
+epoch 19: loss 3.933, val HR@10 0.0998, 107s
+epoch 20: loss 3.907, val HR@10 0.1013, 107s
+epoch 21: loss 3.881, val HR@10 0.1027, 107s
+epoch 22: loss 3.859, val HR@10 0.1063, 106s
+epoch 23: loss 3.838, val HR@10 0.1026, 107s
+epoch 24: loss 3.817, val HR@10 0.1061, 107s
+epoch 25: loss 3.799, val HR@10 0.1072, 107s
+epoch 26: loss 3.772, val HR@10 0.1084, 107s
+epoch 27: loss 3.764, val HR@10 0.1087, 107s
+epoch 28: loss 3.751, val HR@10 0.1064, 107s
+epoch 29: loss 3.736, val HR@10 0.1085, 107s
+epoch 30: loss 3.724, val HR@10 0.1101, 106s
+epoch 31: loss 3.714, val HR@10 0.1094, 107s
+epoch 32: loss 3.702, val HR@10 0.1122, 107s
+epoch 33: loss 3.691, val HR@10 0.1131, 107s
+epoch 34: loss 3.675, val HR@10 0.1079, 107s
+epoch 35: loss 3.670, val HR@10 0.1107, 107s
+epoch 36: loss 3.662, val HR@10 0.1106, 107s
+
+[sasrec_d128_l2_lr0.001_s0] sasrec_d128_l2_lr0.001_s0 pooled
+  all                  n= 30000  HR@10 0.1311  NDCG@10 0.0771  HR@100 0.3255
+  organic              n= 13791  HR@10 0.2383  NDCG@10 0.1353  HR@100 0.4995
+  recommended          n= 16209  HR@10 0.0400  NDCG@10 0.0277  HR@100 0.1776
+  organic, repeat      n= 11600  HR@10 0.2654  NDCG@10 0.1531  HR@100 0.5368
+  organic, new         n=  2191  HR@10 0.0945  NDCG@10 0.0408  HR@100 0.3017
+  recommended, repeat  n=  9801  HR@10 0.0560  NDCG@10 0.0412  HR@100 0.2155
+  recommended, new     n=  6408  HR@10 0.0154  NDCG@10 0.0069  HR@100 0.1195
+[sasrec_d128_l2_lr0.001_s0] done in 64.5 min

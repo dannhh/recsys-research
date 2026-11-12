@@ -1,0 +1,42 @@
+[sasrec_d64_l2_lr0.001_s0] listen+ 29,439,278; items 631,003; test events 30,000 over 3 days (organic 0.460); load 19s
+/kaggle/working/code/yambda_seq_pilot.py:120: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, layers)
+sasrec: 149,018 training windows, 40.5M params, device cuda
+epoch 1: loss 7.803, val HR@10 0.0037, 71s
+epoch 2: loss 7.226, val HR@10 0.0043, 69s
+epoch 3: loss 6.893, val HR@10 0.0117, 69s
+epoch 4: loss 6.385, val HR@10 0.0167, 69s
+epoch 5: loss 5.911, val HR@10 0.0288, 69s
+epoch 6: loss 5.526, val HR@10 0.0415, 70s
+epoch 7: loss 5.238, val HR@10 0.0479, 70s
+epoch 8: loss 5.010, val HR@10 0.0573, 70s
+epoch 9: loss 4.837, val HR@10 0.0652, 70s
+epoch 10: loss 4.719, val HR@10 0.0685, 70s
+epoch 11: loss 4.620, val HR@10 0.0716, 70s
+epoch 12: loss 4.540, val HR@10 0.0754, 69s
+epoch 13: loss 4.472, val HR@10 0.0799, 69s
+epoch 14: loss 4.418, val HR@10 0.0794, 69s
+epoch 15: loss 4.373, val HR@10 0.0825, 70s
+epoch 16: loss 4.334, val HR@10 0.0888, 69s
+epoch 17: loss 4.299, val HR@10 0.0874, 69s
+epoch 18: loss 4.268, val HR@10 0.0866, 69s
+epoch 19: loss 4.245, val HR@10 0.0916, 69s
+epoch 20: loss 4.224, val HR@10 0.0890, 69s
+epoch 21: loss 4.203, val HR@10 0.0937, 69s
+epoch 22: loss 4.186, val HR@10 0.0924, 69s
+epoch 23: loss 4.170, val HR@10 0.0944, 69s
+epoch 24: loss 4.154, val HR@10 0.0938, 69s
+epoch 25: loss 4.140, val HR@10 0.0983, 69s
+epoch 26: loss 4.124, val HR@10 0.0975, 69s
+epoch 27: loss 4.115, val HR@10 0.0956, 69s
+epoch 28: loss 4.103, val HR@10 0.0951, 69s
+
+[sasrec_d64_l2_lr0.001_s0] sasrec_d64_l2_lr0.001_s0 pooled
+  all                  n= 30000  HR@10 0.1085  NDCG@10 0.0576  HR@100 0.3055
+  organic              n= 13791  HR@10 0.2090  NDCG@10 0.1127  HR@100 0.4612
+  recommended          n= 16209  HR@10 0.0230  NDCG@10 0.0107  HR@100 0.1729
+  organic, repeat      n= 11600  HR@10 0.2336  NDCG@10 0.1275  HR@100 0.4934
+  organic, new         n=  2191  HR@10 0.0785  NDCG@10 0.0344  HR@100 0.2907
+  recommended, repeat  n=  9801  HR@10 0.0290  NDCG@10 0.0136  HR@100 0.2069
+  recommended, new     n=  6408  HR@10 0.0137  NDCG@10 0.0063  HR@100 0.1209
+[sasrec_d64_l2_lr0.001_s0] done in 33.2 min

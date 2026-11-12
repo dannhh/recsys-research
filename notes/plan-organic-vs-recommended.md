@@ -273,3 +273,10 @@ Cite the paper as foundational for "exposure changes rankings".
 1. KuaiRec is **weak** evidence for our mechanism. It does not show transition imitation winning on logs but losing on true preference beyond the head.
 2. A possible small contribution: **the inversion reported by Parajuli et al. is concentrated in the popular head.** Check whether they analysed this.
 3. The ranking-flip claim rests on **Yambda** alone. This makes the A100 robustness runs on Yambda decisive.
+
+## Status and handoff (2026-11-13)
+- Step 1 tuning is done: `notes/2026-11-13-yambda-step1-tune.md`. The flip survives a tuned SASRec on one seed; GO pending seeds.
+- **Setting up on a new machine:**
+  - `python -m venv .venv && .venv/bin/pip install -r requirements.txt`
+  - Data is not in git (`data/` is ignored). Download the Yambda listens from the private Kaggle dataset: `kaggle datasets download dnnguynhng/yambda-50m-listens -p data/raw/yambda --unzip`. The other datasets (KuaiRand, KuaiRec, KuaiSAR, Amazon) must be re-downloaded from their sources; links are in this file.
+  - Kaggle runs: `python scripts/kaggle_build.py --slug <slug> --jobs "<args>" ...`, then `kaggle kernels push -p kaggle/<slug>`. Kaggle allows 2 concurrent GPU sessions per account, shared with the competition work.
