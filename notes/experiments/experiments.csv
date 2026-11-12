@@ -1,0 +1,16 @@
+run,date,dataset,study,model,seed,val_hr10,hr10_all,hr10_organic_repeat,hr10_organic_new,hr10_recommended_repeat,hr10_recommended_new,hr100_all,source,conclusion
+pilot_popularity,2026-10-03,yambda50m,pilot 1 test day,popularity,0,,0.0057,0.0089,0.003,0.0043,0.0028,0.0264,runs/yambda50m_seq_pilot_counts.json,pilot; superseded by step 1
+pilot_markov1,2026-10-03,yambda50m,pilot 1 test day,markov1,0,,0.171,0.388,0.1426,0.0227,0.0056,0.2474,runs/yambda50m_seq_pilot_counts.json,pilot; superseded by step 1
+pilot_pairwise5,2026-10-03,yambda50m,pilot 1 test day,pairwise5,0,,0.1611,0.3639,0.1293,0.0233,0.0071,0.2914,runs/yambda50m_seq_pilot_counts.json,pilot; superseded by step 1
+pilot_gru4rec_8ep,2026-10-03,yambda50m,pilot 1 test day,gru4rec d64 (8ep),0,0.0557,0.1014,0.228,0.0416,0.019,0.0122,0.2256,runs/yambda50m_seq_pilot_gru4rec_8ep.json,pilot; superseded by step 1
+pilot_sasrec_8ep,2026-10-03,yambda50m,pilot 1 test day,sasrec d64 (8ep),0,0.058,0.1056,0.2387,0.0401,0.0187,0.0132,0.2424,runs/yambda50m_seq_pilot_sasrec_8ep.json,pilot; superseded by step 1
+pilot_sasrec,2026-10-04,yambda50m,pilot 1 test day,sasrec d64 (early stop),0,0.0897,0.1227,0.2758,0.0475,0.0239,0.0146,0.3046,runs/yambda50m_seq_pilot_sasrec.json,pilot; superseded by step 1
+sasrec_d128_l2_lr0.0003_s0,2026-11-13,yambda50m,"step1 tune, 3 test days",sasrec d128 l2 lr0.0003,0,0.0922,0.1044,0.2289,0.0771,0.0239,0.0115,0.285,runs/kaggle/yambda-bench-step1-tune/runs/yambda_bench/sasrec_d128_l2_lr0.0003_s0.json,
+sasrec_d128_l2_lr0.001_s0,2026-11-13,yambda50m,"step1 tune, 3 test days",sasrec d128 l2 lr0.001,0,0.1131,0.1311,0.2654,0.0945,0.056,0.0154,0.3255,runs/kaggle/yambda-bench-step1-tune/runs/yambda_bench/sasrec_d128_l2_lr0.001_s0.json,second best; rec repeat 0.056 needs seeds
+sasrec_d256_l2_lr0.0003_s0,2026-11-13,yambda50m,"step1 tune, 3 test days",sasrec d256 l2 lr0.0003,0,0.0814,0.0753,0.1556,0.0621,0.0242,0.0125,0.2712,runs/kaggle/yambda-bench-step1-tune/runs/yambda_bench/sasrec_d256_l2_lr0.0003_s0.json,
+sasrec_d256_l2_lr0.001_s0,2026-11-13,yambda50m,"step1 tune, 3 test days",sasrec d256 l2 lr0.001,0,0.1144,0.1274,0.2725,0.1187,0.0281,0.0197,0.3289,runs/kaggle/yambda-bench-step1-tune/runs/yambda_bench/sasrec_d256_l2_lr0.001_s0.json,best val; near converged at epoch 28
+sasrec_d64_l2_lr0.0003_s0,2026-11-13,yambda50m,"step1 tune, 3 test days",sasrec d64 l2 lr0.0003,0,0.0061,0.0052,0.0087,0.0027,0.0047,0.0005,0.0306,runs/kaggle/yambda-bench-step1-tune/runs/yambda_bench/sasrec_d64_l2_lr0.0003_s0.json,"not a result: stalled, cut by patience 3 after 6 epochs"
+sasrec_d64_l2_lr0.001_s0,2026-11-13,yambda50m,"step1 tune, 3 test days",sasrec d64 l2 lr0.001,0,0.0983,0.1085,0.2336,0.0785,0.029,0.0137,0.3055,runs/kaggle/yambda-bench-step1-tune/runs/yambda_bench/sasrec_d64_l2_lr0.001_s0.json,
+step1_popularity,2026-10-17,yambda50m,"step1 tune, 3 test days",popularity,0,,0.005,0.0085,0.0027,0.0041,0.0008,0.0294,runs/yambda_bench/counts.json,
+step1_markov1,2026-10-17,yambda50m,"step1 tune, 3 test days",markov1,0,,0.1321,0.2939,0.1529,0.0181,0.0066,0.2156,runs/yambda_bench/counts.json,
+step1_pairwise5,2026-10-17,yambda50m,"step1 tune, 3 test days",pairwise5,0,,0.1278,0.2784,0.1565,0.0215,0.008,0.2595,runs/yambda_bench/counts.json,
