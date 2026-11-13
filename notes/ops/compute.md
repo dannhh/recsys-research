@@ -13,6 +13,7 @@
 ## Kaggle (T4 x2)
 - Accounts: `dnnguynhng` (shared with the competition repos) and, from 2026-11-13 by the owner's choice, `dannhcse` for this project. The token is passed as `KAGGLE_API_TOKEN` in the shell and never written to the repo. Each account holds its own private copy of `yambda-50m-listens`; pass `--user <account>` to `scripts/kaggle_build.py`.
 - The runner stops at once if the session has no GPU, instead of training on CPU.
+- 2026-11-13: the first kernel on `dannhcse` got no GPU (no `nvidia-smi` in the session) and failed within a minute. Kaggle gives GPUs only to phone-verified accounts; verify the phone in that account's settings before pushing GPU kernels there.
 - Build a kernel: `.venv/bin/python scripts/kaggle_build.py --slug <slug> --jobs "<args for yambda_bench.py>" ...`
 - Push: `uvx --with six kaggle kernels push -p kaggle/<slug>`. Download: `uvx --with six kaggle kernels output dnnguynhng/<slug> -p runs/kaggle/<slug>`.
 - The runner gives each GPU its own job queue worker, so T4 x2 runs two jobs at a time.
