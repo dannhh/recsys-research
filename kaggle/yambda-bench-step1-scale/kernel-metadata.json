@@ -1,5 +1,5 @@
 {
-  "id": "dannhcse/yambda-bench-step1-scale",
+  "id": "dnnguynhng/yambda-bench-step1-scale",
   "title": "yambda-bench-step1-scale",
   "code_file": "run.py",
   "language": "python",
@@ -9,7 +9,7 @@
   "enable_tpu": "false",
   "enable_internet": "false",
   "dataset_sources": [
-    "dannhcse/yambda-50m-listens"
+    "dnnguynhng/yambda-50m-listens"
   ],
   "competition_sources": [],
   "kernel_sources": [],

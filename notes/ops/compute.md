@@ -20,3 +20,8 @@
 - Timings: SASRec d64 about 70 s per epoch, d256 about 190 s per epoch. One step-1 kernel (6 runs, 6 hours of run time in total) took about 3 to 4 hours of wall time.
 - The account is shared with the competition repos: at most 2 sessions at once, about 30 GPU hours per week. A kernel can sit in QUEUED for a while at busy hours.
 - Early stopping uses patience 3. That is too short for lr 3e-4 at d64, which stalled and was cut after 6 epochs.
+
+## Modal (set up 2026-11-13, not usable yet)
+- `scripts/modal_run.py` runs `yambda_bench.py` jobs in parallel, one L4 container per job; Yambda is in the volume `yambda-data`, results go to `recsys-runs`.
+- The first run was refused with "Workspace has exceeded its spend limit": the new workspace needs billing (free credits or a spend limit) set by the owner before it can run.
+- Kaggle refuses a push beyond 2 GPU sessions ("Maximum batch GPU session count of 2 reached"); it does not queue it.
