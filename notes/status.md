@@ -15,7 +15,7 @@ Updated 2026-11-13 (+07). Read this first after a break or a compaction; details
 - Step 1 tuning (6 SASRec configs, 1 seed) keeps the flip. The best configs are d256 and d128 with lr 1e-3.
 
 ## Next steps
-1. Seeds 1 and 2 for SASRec d256 and d128 at lr 1e-3 (4 runs, about 2 to 3 hours on T4 x2). Ask before pushing the kernel.
+1. **Running (2026-11-13):** kernel `dannhcse/yambda-bench-step1-scale`: SASRec d512 seeds 0-1, d256 with 4 layers seed 0, d256 seeds 1-2 (lr 1e-3, 150-minute budget each, about 5 hours). It tests the main risk: in step 1 the gap to the count models on organic events shrank as d grew (organic new 0.079, 0.095, 0.119 for d64, d128, d256 vs 0.157), so a larger model might erase the flip.
 2. GRU4Rec and BERT4Rec at the best setting, 2 seeds each.
 3. Paired bootstrap over test events, per group and per day, from the saved NPZ ranks.
 4. Replay-share decomposition, then the source-aware training method (plan, steps 3 to 5).
